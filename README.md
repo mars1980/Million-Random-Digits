@@ -3,6 +3,8 @@ A Million-PsuedoRandom-Digits
 
 A Million Random Digits, After RAND's 1955's master random number table of 1,000,000 randomly generated numbers with 100,000 normal deviates. The book was the largest of its kind and useful for statisticians, scientists making bomb calculations, and for artists creating experimental music. 
 
+This github repo is a recreation of this important historical artefact. 
+
 
 
  Useful links:

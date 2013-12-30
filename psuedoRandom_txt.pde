@@ -1,4 +1,4 @@
-//A sketch saves 1,000,000 psuedorandom digits to a .txt file
+//A sketch saves 1,000,000 pseudorandom digits to a .txt file
 //after RAND's 'A million Random digits and 100,000 normal deviates
 //each string of random numbers consists of 5 digits each
 //timer keeps track of time passed 
@@ -36,7 +36,7 @@ void draw()
   fill(0);
   writeNum();
   keepTime();
-  text("A Million Psuedorandom Digits", width/2, height/3);
+  text("A Million Pseudorandom Digits", width/2, height/3);
   textAlign(CENTER);
   text(counter, width/2, height/3 *2);
   text(timeElapsed, width/2, height/3*3-10);
@@ -45,7 +45,7 @@ void draw()
   //keep track of how many random numbers are generated
   //if you've created a million log the time and close the .txt file
   counter = counter + 1;
-  if (counter >= thousand)
+  if (counter >= million)
   {
     counter = 0;
     output.println ( "TOTAL TIME:" + " " + timeElapsed);

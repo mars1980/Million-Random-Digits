@@ -22,9 +22,9 @@ String timeElapsed;
 
 void setup()
 {
-  size(400, 150);
+  size(450, 150);
   output = createWriter("digits.txt"); 
-  f = createFont ("Times-Roman", 24);
+  f = createFont ("Courier", 24);
   textFont (f);
   savedMillis = millis();
 }

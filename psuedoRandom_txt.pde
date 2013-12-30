@@ -17,11 +17,12 @@ int minute;
 int hour;
 int million = 1000000;
 int thousand = 1000; //for testing
+String timeElapsed; 
 
 
 void setup()
 {
-  // size(100, 100);
+  size(400, 150);
   output = createWriter("digits.txt"); 
   f = createFont ("Times-Roman", 24);
   textFont (f);
@@ -32,18 +33,22 @@ void setup()
 void draw()
 {
   background(255);
-  textAlign(CENTER);
   fill(0);
   writeNum();
   keepTime();
+  text("A Million Psuedorandom Digits", width/2, height/3);
+  textAlign(CENTER);
+  text(counter, width/2, height/3 *2);
+  text(timeElapsed, width/2, height/3*3-10);
+
 
   //keep track of how many random numbers are generated
   //if you've created a million log the time and close the .txt file
   counter = counter + 1;
-  if (counter >= million)
+  if (counter >= thousand)
   {
     counter = 0;
-    output.println ( "TOTAL TIME:" + " " + hour + " " + "hours" + " " + minute + " " + "minutes" + " "+ seconds + " " + "seconds");
+    output.println ( "TOTAL TIME:" + " " + timeElapsed);
     output.flush();  // Writes the remaining data to the file
     output.close();  // Finishes the file
     exit();  // Stops the program
@@ -92,19 +97,22 @@ void keepTime()
     minute = minute +1;
     seconds = 0;
   }
-  
+
   if (minute >= 60)
   {
-  hour = hour + 1;
-  minute = 0;
+    hour = hour + 1;
+    minute = 0;
   }
+  
+  timeElapsed = hour + ":" + minute + ":" + seconds;
 }
 
 void keyPressed()
 {
   if ( key == 's')
   {
-    println ( hour + " " + "hours" + " " + minute + " " + "minutes" + " "+ seconds + " " + "seconds" + " " + counter + " " + "random numbers generated");
+    //println ( hour + " " + "hours" + " " + minute + " " + "minutes" + " "+ seconds + " " + "seconds" + " " + counter + " " + "random numbers generated");
+    println(timeElapsed);
   }
 }
 
